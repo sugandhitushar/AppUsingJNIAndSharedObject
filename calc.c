@@ -11,5 +11,7 @@ JNIEXPORT jint JNICALL Java_App_calcBill(JNIEnv *env, jclass jobj, jintArray arr
 		sum+=params[i];
 	}
 	
+	(*env)->ReleaseIntArrayElements(env, arr, params, 0);
+	
 	return sum;
 }
