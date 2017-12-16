@@ -1,0 +1,24 @@
+ Reference - http://stuf.ro/calling-c-code-from-java-using-jni 
+ 
+/* App.java */
+
+/*	
+	Execution steps -
+	Step 1: Compile this java program using below command
+		javac App.c
+	
+	Step 2: Generate Header file using below command
+		javah App
+	
+	Step 3: Use the function signature from the header file and write C library. Compile C library using below command. For locating jni.h use command : (locate jni.h) 
+	
+		gcc -o libcalc.so -shared -I</path/where/jni.h/is/located>  calc.c -lc -fPIC
+		
+		Example - gcc -o libcalc.so -shared -I/usr/java/jdk1.8.0_144/include/ -I/usr/java/jdk1.8.0_144/include/linux calc.c -lc -fPIC
+		
+	Step 4: Execute java program using below command
+		java -Djava.library.path=</path/of/.so/file> App
+		
+		Example - java -Djava.library.path=/root/SYMCA/JNI/Shopping_app App
+*/
+
